@@ -1,6 +1,6 @@
 # 输入成绩，计算等级
 # 注：在python中可以将变量的范围写成手写形式，不必用and或者or（仅python支持）
-
+# 90<=x<=100 手写形式示例
 score = int(input('请输入您的成绩：'))
 if score > 100 or score < 0:
     print('输入有误，请重新输入！')
