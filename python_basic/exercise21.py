@@ -1,6 +1,22 @@
-# 录入成绩
-# 要求：用户录入成绩，若三次均录入错误（录入的不是整数），则提示“错误过多，系统退出”，
-# 如果所有录入正确（小于100的整数）（用户输入空字符串时表示录入结束）则提示”录入完成“并退出系统。
+# 录入成绩，判断等级
+# 要求：用户录入成绩，若有三次录入错误（录入的分数不在0-100范围内），则提示“错误过多，程序退出”。
+# 注：如果用户录入空字符串则退出程序
+count = 0  # 计数器
+while count < 3:
+    score = input('请输入您的成绩：')
+    if score == '':
+        break
 
-while True:
-    score=input('请输入成绩')
+    if int(score) > 100 or int(score) < 0:
+        print('输入有误，请重新输入！')
+        count += 1
+    elif int(score) >= 90:
+        print('优秀')
+    elif int(score) >= 80:
+        print('良好')
+    elif int(score) >= 60:
+        print('及格')
+    else:
+        print('不及格')
+else:
+    print('错误过多，程序退出')
