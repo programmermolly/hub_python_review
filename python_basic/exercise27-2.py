@@ -21,4 +21,4 @@ print('前两个字符为：%s' % (usr_str[:2]))
 # 5.用反向切片，获取原字符串
 print('倒序打印的结果是：' + usr_str[::-1])
 # 6.
-print('中间的字符为：'+usr_str[(len(usr_str)-1)//2])
+print('中间的字符为：' + usr_str[(len(usr_str) - 1) // 2])
