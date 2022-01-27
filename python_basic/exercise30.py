@@ -24,6 +24,6 @@ for item in range(13):
     height = height / 2
     sum_value += height * 2
 sum_value += 100
-# 有来就有回，所以需要乘2
-# 弹跳总路程+最初下落的100米
+# 有来就有回，所以需要乘2(起落总路程)
+# 起落总路程+最初下落的100米
 print('总共走了%d米' % int(sum_value))
