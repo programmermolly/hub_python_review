@@ -12,5 +12,5 @@ while True:
     dict_info[name] = (age, score, sex)
 # 测试
 # print(dict_info)
-for item in dict_info.items():
-    print(item)
+for key,info in dict_info.items():
+    print(key,info)
