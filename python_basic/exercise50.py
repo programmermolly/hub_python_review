@@ -13,4 +13,3 @@ for item in my_str:
         dict_str[item] = 1
 
 print(dict_str)
-
