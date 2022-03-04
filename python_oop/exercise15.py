@@ -5,28 +5,27 @@
 # 赵敏一个月6000元
 
 class Person:
-    def __init__(self,name,money):
-        self.name=name
-        self.money=money
+    def __init__(self, name, money):
+        self.name = name
+        self.money = money
+
     @property
     def name(self):
         return self.__name
+
     @name.setter
-    def name(self,name):
-        self.__name=name
-    def teaching(self,others,content):
-        print(self.name,'教',others.name,content)
+    def name(self, name):
+        self.__name = name
 
-    def making_money(self,value):
-        print('%s赚了%d元'%(self.name,value))
+    def teaching(self, others, content):
+        print(self.name, '教', others.name, content)
+
+    def making_money(self, value):
+        print('%s赚了%d元' % (self.name, value))
 
 
-zwj=Person('zwj',10000)
-zm=Person('zm',6000)
-zwj.teaching(zwj,'jiuyangshengong')
+zwj = Person('zwj', 10000)
+zm = Person('zm', 6000)
+zwj.teaching(zwj, 'jiuyangshengong')
 zm.making_money(6000)
 zwj.making_money(10000)
-
-
-
-
