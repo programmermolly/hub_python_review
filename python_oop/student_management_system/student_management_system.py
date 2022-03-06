@@ -65,6 +65,13 @@ class StudentManagementController:
                 return True  # 修改成功
         return False  # 修改失败
 
+    def order_by_score(self):
+        for i in range(len(self.__stu_list) - 1):
+            for j in range(i + 1, len(self.__stu_list)):
+                if self.__stu_list[i].score > self.__stu_list[j].score:
+                    self.__stu_list[i].score, self.__stu_list[j].score = self.__stu_list[j].score, self.__stu_list[
+                        i].score
+
 
 class StudentManagementView:
     def __init__(self):
@@ -83,12 +90,13 @@ class StudentManagementView:
             self.__input_student()
         elif item == '2':
             self.__output_student(self.__management.stu_list)
+            pause = input('请按任意键继续！')
         elif item == '3':
             self.__delete_student()
         elif item == '4':
             self.__modify_student()
         elif item == '5':
-            pass
+            self.__output_student_by_score()
 
     def main(self):
         while True:
@@ -105,25 +113,31 @@ class StudentManagementView:
     def __output_student(self, output_list):
         for item in output_list:
             print(item.stu_id, item.name, item.age, item.score)
+
     def __delete_student(self):
-        stu_id=int(input('请输入学生编号：'))
+        stu_id = int(input('请输入学生编号：'))
         if self.__management.remove_student(stu_id):
             print('删除成功！')
+            pause = input('请按任意键继续！')
         else:
             print('删除失败！')
+            pause = input('请按任意键继续！')
+
     def __modify_student(self):
-        stu_id=int(input('请输入编号：'))
-        new_name=input('请输入新的姓名：')
-        new_age=int(input('请输入新的年龄：'))
-        new_score=int(input('请输入新的成绩：'))
-        new_stu=StudentModel(new_name,new_age,new_score)
+        stu_id = int(input('请输入编号：'))
+        new_name = input('请输入新的姓名：')
+        new_age = int(input('请输入新的年龄：'))
+        new_score = int(input('请输入新的成绩：'))
+        new_stu = StudentModel(new_name, new_age, new_score)
         if self.__management.update_student(new_stu):
             print('修改成功！')
         else:
             print('修改失败！')
 
+    def __output_student_by_score(self):
+        self.__management.order_by_score()
+        self.__output_student(self.__management.stu_list)
 
 
-
-view=StudentManagementView()
+view = StudentManagementView()
 view.main()
