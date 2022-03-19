@@ -16,6 +16,7 @@ class Vector2:
     """
     辅助获取二维列表元素的类
     """
+
     def __init__(self, x, y):
         """
         初始化类
@@ -24,10 +25,11 @@ class Vector2:
         """
         self.x = x
         self.y = y
+
     # 表示方向
     @staticmethod
     def left():
-        return  Vector2(0, -1)
+        return Vector2(0, -1)
 
     @staticmethod
     def right():
@@ -42,8 +44,7 @@ class Vector2:
         return Vector2(1, 0)
 
 
-
-def get_elements(map_given,pos_given,dir_given,count):
+def get_elements(map_given, pos_given, dir_given, count):
     """
     获取二维列表中任意一个元素
     :param map_given: 所给的区域（列表）
@@ -52,42 +53,34 @@ def get_elements(map_given,pos_given,dir_given,count):
     :param count:步数（待获取元素的个数）
     :return: 要求的元素
     """
-    res=[]
+    res = []
     for item in range(count):
-        pos_given.x+=dir_given.x
-        pos_given.y+=dir_given.y
+        pos_given.x += dir_given.x
+        pos_given.y += dir_given.y
         res.append(map_given[pos_given.x][pos_given.y])
     return res
 
+
 # 使用类
-list_given=[
-    ['00','01','02','03'],
-    ['10','11','12','13'],
-    ['20','21','22','23'],
+list_given = [
+    ['00', '01', '02', '03'],
+    ['10', '11', '12', '13'],
+    ['20', '21', '22', '23'],
 ]
 # 1.
-pos01=Vector2(1,3)
-dir01=pos01.left()
-res_receive01=get_elements(list_given, pos01, dir01, 3)
-print('res_receive01='+str(res_receive01))
+pos01 = Vector2(1, 3)
+dir01 = pos01.left()
+res_receive01 = get_elements(list_given, pos01, dir01, 3)
+print('res_receive01=' + str(res_receive01))
 
 # 2.
-pos02=Vector2(2,2)
-dir02=pos02.up()
-res_receive02=get_elements(list_given, pos02, dir02, 2)
-print('res_receive02='+str(res_receive02))
+pos02 = Vector2(2, 2)
+dir02 = pos02.up()
+res_receive02 = get_elements(list_given, pos02, dir02, 2)
+print('res_receive02=' + str(res_receive02))
 
 # 3.
-pos03=Vector2(0,3)
-dir03=pos03.down()
-res_receive03=get_elements(list_given, pos03, dir03, 2)
-print('res_receive03='+str(res_receive03))
-
-
-
-
-
-
-
-
-
+pos03 = Vector2(0, 3)
+dir03 = pos03.down()
+res_receive03 = get_elements(list_given, pos03, dir03, 2)
+print('res_receive03=' + str(res_receive03))
