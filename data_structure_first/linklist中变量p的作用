@@ -1,9 +1,0 @@
-node1=self.head.next  // 由列表第一个元素生成
-node2=self.head.next.next   // node1.next 由列表第二个元素生成
-node3=self.head.next.next.next // node2.next
-
-循环
-遍历列表
-每个元素生成一个结点，并挂在已有的最后一个结点的后面
-由于已有的最后一个结点不断变化，所以需要一个变量来指示其位置
-
